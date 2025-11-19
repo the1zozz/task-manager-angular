@@ -1,11 +1,13 @@
 import { Component , computed, EventEmitter, input, Input, output, Output } from '@angular/core';
 import { type UserProps } from './user.model';
+import { Card } from "../shared/card/card";
 
 @Component({
   selector: 'app-user',
   standalone: true,
   templateUrl: './user.html',
   styleUrls: ['./user.css'],
+  imports: [Card],
 })
 export class User {
   // with signal approach
@@ -18,6 +20,7 @@ export class User {
   // @Input({required: true}) avatar!: string ;
   // @Input({required: true}) name!: string ;
 
+  @Input({required: true}) selected !: boolean ;
   @Input({required: true}) user !: UserProps ;
   @Output() select = new EventEmitter<string>();
 
