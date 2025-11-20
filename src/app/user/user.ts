@@ -1,6 +1,7 @@
 import { Component , computed, EventEmitter, input, Input, output, Output } from '@angular/core';
 import { type UserProps } from './user.model';
 import { Card } from "../shared/card/card";
+import { SharedModule } from '../shared/shared.module';
 
 @Component({
   selector: 'app-user',
